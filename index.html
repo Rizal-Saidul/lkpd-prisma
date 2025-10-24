@@ -1,411 +1,134 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Belajar Bangun Ruang Prisma</title>
-    
-    <style>
-        /* Mengatur skema warna default browser ke gelap */
-        :root {
-            color-scheme: dark;
-        }
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Belajar Bangun Ruang — Prisma (Demo)</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <div class="brand">
+          <h1>Bangun Ruang — Prisma</h1>
+          <p class="tag">Pembelajaran interaktif singkat untuk presentasi</p>
+        </div>
+        <button
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="main-nav"
+        >
+          Menu
+        </button>
+        <nav id="main-nav" class="main-nav" hidden>
+          <a href="#penjelasan">Penjelasan</a>
+          <a href="#gambar">Macam-Macam</a>
+          <a href="#sifat">Sifat</a>
+          <a href="#sumber">Sumber</a>
+          <a href="#kuis">Kuis</a>
+        </nav>
+      </header>
 
-        /* Kriteria 2: Tata letak dan estetika dasar */
-        body {
-            /* Warna dasar biru dongker */
-            /* background-color: #0a192f; */
-            background-image: url('https://github.com/Rizal-Saidul/lkpd-prisma/blob/master/background.jpg'); 
-            background-position: center;
-            background-size: cover;
-            /* background-repeat: space; */
-            /* background: fixed; */
-            /* Warna teks utama (putih pudar) */
-            color: #e6f1ff; 
-            /* Font stack modern */
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: normal;
-            margin: 0;
-            padding: 20px;
-            font-size: 12px;
-        }
+      <main class="container">
+        <section class="hero">
+          <div class="embed">
+            <iframe
+              title="3D Prisma (Preview)"
+              frameborder="0"
+              allowfullscreen
+              width="320"
+              height="240"
+              src="https://sketchfab.com/models/ba806304632847df9a5ea90ac8a6228b/embed?autospin=1&autostart=1&transparent=1&ui_theme=dark"
+            >
+            </iframe>
+          </div>
+          <div class="hero-text">
+            <h2>Apa itu Prisma?</h2>
+            <p>
+              Prisma adalah bangun ruang tiga dimensi yang memiliki alas dan
+              tutup sebangun serta sisi tegak berbentuk persegi/persegi panjang.
+              Presentasi ini fokus pada sifat, contoh, dan kuis singkat.
+            </p>
+          </div>
+        </section>
 
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            /* Warna kontainer (biru dongker sedikit lebih terang) */
-            background-color: #172a45; 
-            border: 1px solid #304a6e;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.7);
-        }
+        <section id="gambar" class="panel">
+          <h3>Macam-Macam Prisma</h3>
+          <p>
+            Nama prisma bergantung pada bentuk alasnya. Contoh di bawah
+            disajikan dengan gambar dan deskripsi singkat.
+          </p>
+          <ul id="list" class="prism-list" aria-live="polite"></ul>
+        </section>
 
-        header {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            justify-self: center;
-            text-align: center;
-            padding: 30px 20px;
-            border-bottom: 2px solid #304a6e;
-            align-items: center;
-            gap: 75px;
-        }
+        <section id="sifat" class="panel">
+          <h3>Sifat-Sifat Prisma</h3>
+          <ul>
+            <li>Memiliki alas dan atap yang sebangun dan sejajar.</li>
+            <li>Memiliki sisi tegak berbentuk persegi panjang.</li>
+            <li>
+              Memiliki <strong>(n + 2)</strong> sisi; <strong>3n</strong> rusuk;
+              dan <strong>2n</strong> titik sudut.
+            </li>
+          </ul>
 
-        /* Aksen warna modern (cyan/teal) untuk judul utama */
-        header h1 {
-            color: #64ffda;
-            margin: 0;
-            font-size: 2.5em;
-        }
+          <table>
+            <thead>
+              <tr>
+                <th>Jenis Prisma (n)</th>
+                <th>Jumlah Sisi (n+2)</th>
+                <th>Jumlah Rusuk (3n)</th>
+                <th>Jumlah Titik Sudut (2n)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Segitiga (3)</td>
+                <td>5</td>
+                <td>9</td>
+                <td>6</td>
+              </tr>
+              <tr>
+                <td>Segiempat (4)</td>
+                <td>6</td>
+                <td>12</td>
+                <td>8</td>
+              </tr>
+              <tr>
+                <td>Segilima (5)</td>
+                <td>7</td>
+                <td>15</td>
+                <td>10</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
 
-        main {
-            padding: 20px 30px;
-        }
+        <section id="sumber" class="panel">
+          <h3>Sumber Belajar Lain</h3>
+          <p>
+            Untuk materi lanjut tentang rumus volume dan luas permukaan, lihat
+            sumber berikut:
+          </p>
+          <a
+            href="https://www.ruangguru.com/blog/pengertian-sifat-dan-rumus-rumus-prisma"
+            target="_blank"
+            rel="noopener"
+            >Halaman Ruangguru — Prisma</a
+          >
+        </section>
 
-        section {
-            margin-bottom: 30px;
-        }
+        <section id="kuis" class="panel quiz-panel">
+          <h3>Kuis Prisma 🧠</h3>
+          <form id="quizForm" class="quiz-form" aria-labelledby="kuis"></form>
+        </section>
+      </main>
 
-        /* Judul sub-bagian (lebih terang) */
-        h2 {
-            color: #ccd6f6;
-            border-bottom: 1px solid #304a6e;
-            padding-bottom: 10px;
-        }
+      <footer class="site-footer">
+        <p>&copy; 2025 Halaman Belajar Prisma — Demo untuk presentasi</p>
+      </footer>
+    </div>
 
-        /* Penataan gambar */
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 20px auto;
-            border-radius: 8px;
-            border: 1px solid #304a6e;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .caption {
-            text-align: center;
-            font-style: italic;
-            font-size: 0.9em;
-            color: #8892b0; /* Warna abu-abu kebiruan */
-        }
-
-        /* Penataan list */
-        ul {
-            background-color: #0a192f;
-            border: 1px solid #304a6e;
-            border-radius: 8px;
-            padding: 20px 20px 20px 40px;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        /* Penataan tabel (Kriteria 3) */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th, td {
-            border: 1px solid #304a6e;
-            padding: 12px;
-            text-align: left;
-        }
-
-        /* Header tabel */
-        th {
-            background-color: #1f3657;
-            color: #ccd6f6;
-        }
-
-        /* Penataan form (Kriteria 3) */
-        form {
-            background-color: #0a192f;
-            padding: 25px;
-            border: 1px solid #304a6e;
-            border-radius: 8px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #ccd6f6;
-            font-weight: 600;
-        }
-
-        .form-group input[type="text"],
-        .form-group input[type="number"] {
-            width: 95%;
-            padding: 12px;
-            background-color: #1f3657;
-            border: 1px solid #304a6e;
-            border-radius: 4px;
-            color: #e6f1ff;
-            font-size: 1em;
-        }
-
-        .form-group input:focus {
-            outline: none;
-            border-color: #64ffda;
-            box-shadow: 0 0 5px rgba(100, 255, 218, 0.3);
-        }
-
-        /* Tombol dengan warna aksen modern */
-        button {
-            background-color: #64ffda; /* Aksen cyan */
-            color: #0a192f; /* Teks warna biru dongker (kontras) */
-            padding: 12px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1em;
-            font-weight: 700;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #52d9c0;
-        }
-
-        /* Penataan link (Kriteria 3) */
-        a {
-            color: #64ffda; /* Aksen cyan */
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        a:hover {
-            text-decoration: underline;
-            color: #52d9c0;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            margin-top: 20px;
-            border-top: 1px solid #304a6e;
-            font-size: 0.9em;
-            color: #8892b0;
-        }
-    </style>
-</head>
-<body>
-    
-    <div class="container">
-        <header>
-            <h1>Bangun Ruang<br/>Prisma</h1>
-            <div class="sketchfab-embed-wrapper"> <iframe title="3k Prisma Draadmodel, Kleur" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="320" height="240" src="https://sketchfab.com/models/ba806304632847df9a5ea90ac8a6228b/embed?autospin=1&autostart=1&transparent=1&ui_theme=dark"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/3k-prisma-draadmodel-kleur-ba806304632847df9a5ea90ac8a6228b?utm_medium=embed&utm_campaign=share-popup&utm_content=ba806304632847df9a5ea90ac8a6228b" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> 3k Prisma Draadmodel, Kleur </a> by <a href="https://sketchfab.com/wgfdegraaf?utm_medium=embed&utm_campaign=share-popup&utm_content=ba806304632847df9a5ea90ac8a6228b" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> wgfdegraaf </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=ba806304632847df9a5ea90ac8a6228b" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
-        </header>
-
-        <main>
-            <section id="penjelasan">
-                <h2>Apa itu Prisma?</h2>
-                <p>
-                    Prisma adalah bangun ruang tiga dimensi yang dibatasi oleh alas dan tutup identik 
-                    berbentuk segi-n dan sisi-sisi tegak berbentuk persegi atau persegi panjang. 
-                    Dengan kata lain, prisma adalah bangun ruang yang punya penampang melintang 
-                    yang selalu sama dalam bentuk dan ukuran.
-                </p>
-            </section>
-
-            <section id="gambar">
-                <h2>Macam-Macam Prisma</h2>
-                <p>Nama prisma didasarkan pada bentuk alasnya:</p>
-                <ul id="list"></ul>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Prisma.JPG/250px-Prisma.JPG" alt="Ilustrasi berbagai macam prisma">
-                <p class="caption">Sumber: Wikimedia Commons</p>
-            </section>
-
-            <section id="sifat">
-                <h2>Sifat-Sifat Prisma</h2>
-                
-                <p>Secara umum, sifat prisma (dengan alas segi-n) adalah:</p>
-                <ul>
-                    <li>Memiliki alas dan atap yang sebangun dan sejajar.</li>
-                    <li>Memiliki sisi tegak berbentuk persegi panjang.</li>
-                    <li>Memiliki <strong>(n + 2)</strong> sisi (n sisi tegak, 1 alas, 1 atap).</li>
-                    <li>Memiliki <strong>3n</strong> rusuk.</li>
-                    <li>Memiliki <strong>2n</strong> titik sudut.</li>
-                </ul>
-
-                <p>Contoh perhitungan sifat-sifat prisma:</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Jenis Prisma (Alas Segi-n)</th>
-                            <th>Jumlah Sisi (n+2)</th>
-                            <th>Jumlah Rusuk (3n)</th>
-                            <th>Jumlah Titik Sudut (2n)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Prisma Segitiga (n=3)</td>
-                            <td>5</td>
-                            <td>9</td>
-                            <td>6</td>
-                        </tr>
-                        <tr>
-                            <td>Prisma Segiempat (n=4)</td>
-                            <td>6</td>
-                            <td>12</td>
-                            <td>8</td>
-                        </tr>
-                        <tr>
-                            <td>Prisma Segilima (n=5)</td>
-                            <td>7</td>
-                            <td>15</td>
-                            <td>10</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-
-            <section id="sumber">
-                <h2>Sumber Belajar Lain</h2>
-                <p>
-                    Untuk pemahaman yang lebih mendalam mengenai rumus volume dan luas permukaan, 
-                    Anda bisa mengunjungi sumber belajar berikut:
-                </p>
-                <a href="https://id.wikipedia.org/wiki/Prisma_(geometri)" target="_blank">
-                    Halaman Wikipedia tentang Prisma
-                </a>
-            </section>
-
-            <section id="kuis">
-                <h2>Kuis Mini</h2>
-                <p>Uji pemahamanmu dengan kuis sederhana ini!</p>
-                
-                <form id="kuisForm">
-                    <div class="form-group">
-                        <label for="q1">1. Prisma dengan alas segilima (n=5), memiliki berapa jumlah RUSUK?</label>
-                        <input type="number" id="q1" name="q1" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="q2">2. Benda di sekitar kita yang bentuknya mendekati prisma segitiga adalah... (Contoh: atap rumah, tenda)</label>
-                        <input type="text" id="q2" name="q2" required>
-                    </div>
-                    
-                    <button type="submit">Cek Jawaban</button>
-                </form>
-            </section>
-        </main>
-
-        <footer>
-            <p>&copy; 2025 Halaman Belajar Dibuat oleh Gemini.</p>
-        </footer>
-    </div> <script>
-
-        // macam macam prisma 
-         const data = [
-            {
-                nama : 'prisma segitiga',
-                image: 'https://cdn-web-2.ruangguru.com/landing-pages/assets/19eadb1e-174d-4063-9d59-a727b01cec5c.png',
-                deskripsi: 'Prisma segitiga memiliki alas dan tutup yang berbentuk segitiga, sehingga memiliki lima sisi, yakni tiga sisi tegak, satu alas, dan satu tutup.'
-            },
-            {
-                nama : 'prisma segiempat',
-                image: 'https://cdn-web-2.ruangguru.com/landing-pages/assets/dd0baa77-e5af-4ab7-b59e-52d604164746.png',
-                deskripsi: 'Prisma segiempat memiliki alas dan tutup yang berbentuk segiempat, sehingga memiliki enam sisi, yakni empat sisi tegak, satu alas, dan satu tutup. Pada prisma segiempat, terdapat bentuk khusus, yaitu balok dan kubus.'
-            },{
-                nama : 'prisma segilima',
-                image: 'https://cdn-web-2.ruangguru.com/landing-pages/assets/fd59cb69-4c8f-41f3-a8cd-652958a2de46.png',
-                deskripsi: 'Prisma segilima memiliki alas dan tutup yang berbentuk segilima, sehingga memiliki tujuh sisi, yakni lima sisi tegak, satu alas, dan satu tutup.'
-            },{
-                nama : 'prisma segienam',
-                image: 'https://cdn-web-2.ruangguru.com/landing-pages/assets/717c8997-e616-4efe-b4e1-e8f731044a47.png',
-                deskripsi: 'Prisma segienam memiliki alas dan tutup yang berbentuk segienam, sehingga memiliki delapan sisi, yakni enam sisi tegak, satu alas, dan satu tutup.'
-            },
-            {
-                nama : 'Tabung',
-                image: 'https://cdn-web-2.ruangguru.com/landing-pages/assets/2ac82f82-9a48-465b-b099-4a552178034d.png',
-                deskripsi: 'Tabung merupakan jenis prisma khusus dimana alas dan tutupnya berbentuk lingkaran. Sehingga, memiliki sisi tegak atau selimut berupa sisi lengkung yang jika dibuka berbentuk persegi panjang.  Total sisinya menjadi 3, yakni alas, tutup, dan sisi lengkung.'
-            },{
-                nama : 'prisma segi-n',
-                image: 'https://cdn-web-2.ruangguru.com/landing-pages/assets/9f2e2b19-462a-47b8-b268-259083240d71.png',
-                deskripsi: 'Selain yang sudah disebutkan di atas, ada juga jenis prisma segi-n. Contohnya prisma segi-7, prisma segi-8, prisma segi-9, prisma segi-10, dan seterusnya. Nah, karena prisma ini memiliki sisi-sisi yang banyak, jadi terdapat rumus khusus untuk mencari banyaknya rusuk, titik sudut, diagonal bidang, diagonal ruang, dan bidang diagonalnya, yakni: </br> Banyak sisi: n + 2 Jumlah rusuk: 3n Jumlah titik sudut: 2n'
-            },
-         ];
-
-      const listContainer = document.getElementById("list");
-
-      // gunakan map untuk membuat elemen <li> untuk setiap nama
-      const listItems = data.map((p) => 
-      `<li>
-      <h2>${p.nama}</h2>
-      <img width="320px"  src='${p.image}'/>
-      <p>${p.deskripsi}</p>
-        </li>`).join("");
-
-      // masukkan ke DOM
-      listContainer.innerHTML = listItems;
-
-
-        // Memastikan skrip berjalan setelah semua elemen HTML dimuat
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            // 1. Memilih form menggunakan DOM (getElementById)
-            const kuisForm = document.getElementById('kuisForm');
-
-            // 2. Menambahkan 'event listener' untuk 'submit' pada form
-            kuisForm.addEventListener('submit', function(event) {
-                
-                // Mencegah form mengirim data secara default (mencegah reload halaman)
-                event.preventDefault();
-
-                // 3. Mengambil nilai (value) dari input menggunakan DOM
-                
-                // Jawaban 1 (Angka)
-                const jawaban1 = document.getElementById('q1').value;
-                
-                // Jawaban 2 (Teks)
-                const jawaban2Input = document.getElementById('q2').value;
-                // Membersihkan jawaban teks: hapus spasi & ubah ke huruf kecil
-                const jawaban2 = jawaban2Input.trim().toLowerCase();
-
-                // 4. Logika Validasi Jawaban
-                let skor = 0;
-                let pesan = "Hasil Kuis Anda:\n\n";
-
-                // Cek Jawaban 1 (Jawaban benar: 15)
-                if (parseInt(jawaban1) === 15) {
-                    skor++;
-                    pesan += "✅ Soal 1: Benar! (Prisma segilima punya 3n = 3*5 = 15 rusuk)\n";
-                } else {
-                    pesan += "❌ Soal 1: Salah. Jawaban yang benar adalah 15.\n";
-                }
-
-                // Cek Jawaban 2 (Jawaban benar: 'tenda' atau 'atap rumah')
-                if (jawaban2 === 'tenda' || jawaban2 === 'atap rumah') {
-                    skor++;
-                    pesan += "✅ Soal 2: Benar! Tenda atau atap rumah adalah contoh yang bagus.\n";
-                } else {
-                    pesan += "❌ Soal 2: Salah. Contoh yang tepat adalah 'tenda' atau 'atap rumah'.\n";
-                }
-
-                // 5. Menampilkan hasil menggunakan 'alert'
-                if (skor === 2) {
-                    pesan += "\nSelamat! Anda menjawab semua dengan benar!";
-                } else if (skor === 1) {
-                    pesan += "\nLumayan! Anda benar 1 dari 2 soal.";
-                } else {
-                    pesan += "\nMaaf, Anda belum menjawab dengan benar. Coba lagi!";
-                }
-
-                alert(pesan);
-            });
-        });
-    </script>
-</body>
+    <script src="/app.js" defer></script>
+  </body>
 </html>
