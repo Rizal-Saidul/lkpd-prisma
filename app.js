@@ -1,19 +1,4 @@
-// Simple interactive script for demo: renders list and quiz, adds nav toggle
-// document.addEventListener('DOMContentLoaded', () => {
-//   // NAV TOGGLE (mobile)
-//   const navToggle = document.querySelector('.nav-toggle');
-//   const mainNav = document.getElementById('main-nav');
-//   navToggle.addEventListener('click', () => {
-//     const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-//     navToggle.setAttribute('aria-expanded', String(!expanded));
-//     if (expanded) {
-//       mainNav.hidden = true;
-//     } else {
-//       mainNav.hidden = false;
-//     }
-//   });
 
-// Data for macam-macam prisma
 const data = [
   {
     nama: "Prisma Segitiga",
@@ -140,4 +125,3 @@ quizForm.addEventListener("submit", (e) => {
   });
   alert(`Hasil: ${score}/${questions.length}\n\n${results.join("\n")}`);
 });
-// });
